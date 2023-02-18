@@ -1,6 +1,4 @@
-import PageObjectPattern.CartPage;
-import PageObjectPattern.LandingPage;
-import PageObjectPattern.ProductCataloguePage;
+import PageObjectPattern.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +17,8 @@ public class SubmitOrderTest {
         driver.manage().window().maximize();
 
         String productName= "ZARA COAT 3";
+        String countryName ="pol";
+
         LandingPage landingPage = new LandingPage(driver); //sending argument to class - all argument you can catch in constructor in the destination class
         //we careated object for class landingPage above, so we can use methods from that class - below
         landingPage.goTo();
@@ -30,18 +30,14 @@ public class SubmitOrderTest {
 
         Boolean match = cartPage.isMyProductInCart(productName);
         Assert.assertTrue(match); //all assertions have to stay in our test case
-        cartPage.goToCheckoutPage();
+        CheckoutPage checkoutPage = cartPage.goToCheckoutPage();
 
+        checkoutPage.selectCountry(countryName);
+        ConfirmationPage confirmationPage = checkoutPage.placeAnOrder();
+        String confirmMessage = confirmationPage.getConfirmationMessage();
+        Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+        System.out.println("Assertion passed");
 
-//BELOW TO REFACTOR
-//        Actions a = new Actions(driver);
-//        a.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Select Country']")), "Pol").build().perform();
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
-//        driver.findElement(By.xpath("//span[contains(text(), 'Poland')]")).click();
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".action__submit")));
-//        driver.findElement(By.cssSelector(".action__submit")).click();
-//        String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
-//        Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-//        driver.close();
+        driver.close();
     }
 }
