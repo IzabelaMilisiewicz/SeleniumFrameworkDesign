@@ -1,29 +1,26 @@
 package Tests;
 
 import PageObjectPattern.*;
+import TestComponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class SubmitOrderTest {
+public class SubmitOrderTest extends BaseTest { //all tests class should be extended by BaseTest to be possibe to use driver from there
 
-    public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+    @Test
+    public void SubmitOrder() throws IOException {
 
         String productName= "ZARA COAT 3";
         String countryName ="pol";
 
-        LandingPage landingPage = new LandingPage(driver); //sending argument to class - all argument you can catch in constructor in the destination class
-        //we careated object for class landingPage above, so we can use methods from that class - below
-        landingPage.goTo();
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
 
         List<WebElement> products = productCataloguePage.getProductList();
@@ -39,7 +36,5 @@ public class SubmitOrderTest {
         String confirmMessage = confirmationPage.getConfirmationMessage();
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
         System.out.println("Assertion passed");
-
-        driver.close();
     }
 }
