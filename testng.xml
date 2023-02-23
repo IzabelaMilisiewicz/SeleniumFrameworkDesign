@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+        <suite name="Suite">
+<test thread-count="5" name="Submit Order Test">
+<classes>
+<class name="Tests.SubmitOrderTest"/>
+        </classes>
+        </test>
+
+        <test thread-count="5" name="Standalone Test">
+        <classes>
+        <class name="Tests.StandaloneTest"/>
+        </classes>
+        </test>
+
+        <test thread-count="5" name="Error Validations Test">
+        <classes>
+        <class name="Tests.ErrorValidationsTest"/>
+        </classes>
+        </test>
+        </suite>
