@@ -15,11 +15,11 @@ import java.util.List;
 
 public class SubmitOrderTest extends BaseTest { //all tests class should be extended by BaseTest to be possibe to use driver from there
 
-    @Test
-    public void SubmitOrder() throws IOException {
+    String productName= "ZARA COAT 3";
+    String countryName ="pol";
 
-        String productName= "ZARA COAT 3";
-        String countryName ="pol";
+    @Test
+    public void SubmitOrderTest() throws IOException {
 
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
 
@@ -36,5 +36,13 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
         String confirmMessage = confirmationPage.getConfirmationMessage();
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
         System.out.println("Assertion passed");
+    }
+
+    //new test to verify if ZARA COAT 3 is displayed in orders page
+    @Test(dependsOnMethods = {"SubmitOrderTest"}) //thanks to testng this test will be run only if SubmitOrderTest was run before and it passed
+    public void OrderHistoryTest(){
+        ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
+        OrdersPage ordersPage = productCataloguePage.goToOrdersPage();
+        Assert.assertTrue(ordersPage.IsMyProductInOrders(productName));
     }
 }

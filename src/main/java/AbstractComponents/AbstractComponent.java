@@ -1,6 +1,8 @@
 package AbstractComponents;
 
 import PageObjectPattern.CartPage;
+import PageObjectPattern.OrdersPage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +26,8 @@ public class AbstractComponent {
     @FindBy(css="[routerlink*='cart']")
     WebElement cartHeader;
 
+    @FindBy(css="[routerlink*='myorders']")
+    WebElement ordersHeader;
 
     public void waitForElementToAppear(By findBy){
         WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -44,5 +48,11 @@ public class AbstractComponent {
         cartHeader.click();
         CartPage cartPage = new CartPage(driver);
         return cartPage;
+    }
+
+    public OrdersPage goToOrdersPage(){
+        ordersHeader.click();
+        OrdersPage ordersPage = new OrdersPage(driver);
+        return ordersPage;
     }
        }
