@@ -7,10 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 
 public class SubmitOrderTest extends BaseTest { //all tests class should be extended by BaseTest to be possibe to use driver from there
@@ -18,16 +20,17 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
     String productName= "ZARA COAT 3";
     String countryName ="pol";
 
-    @Test
-    public void SubmitOrderTest() throws IOException {
+    @Test(dataProvider = "getData",groups={"Purchase"})
+//    public void SubmitOrderTest(String email, String password, String productName) throws IOException {
+    public void SubmitOrderTest(HashMap<String,String> input) throws IOException {
 
-        ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
+        ProductCataloguePage productCataloguePage = landingPage.loginApplication(input.get("email"), input.get("password"));
 
         List<WebElement> products = productCataloguePage.getProductList();
-        productCataloguePage.addProductToCart(productName);
+        productCataloguePage.addProductToCart(input.get("product"));
         CartPage cartPage = productCataloguePage.goToCartPage();
 
-        Boolean match = cartPage.isMyProductInCart(productName);
+        Boolean match = cartPage.isMyProductInCart(input.get("product"));
         Assert.assertTrue(match); //all assertions have to stay in our test case
         CheckoutPage checkoutPage = cartPage.goToCheckoutPage();
 
@@ -44,5 +47,23 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
         OrdersPage ordersPage = productCataloguePage.goToOrdersPage();
         Assert.assertTrue(ordersPage.IsMyProductInOrders(productName));
+    }
+
+    @DataProvider
+    public Object[][] getData(){
+        HashMap <String, String> map = new HashMap<String,String>();
+        map.put("email", "izaecabs@gmail.com");
+        map.put("password", "Summer01");
+        map.put("product", "ZARA COAT 3");
+
+        HashMap <String, String> map1 = new HashMap<String,String>();
+        map1.put("email", "iza.ecabs@gmail.com");
+        map1.put("password", "Summer01");
+        map1.put("product", "ADIDAS ORIGINAL");
+        return new Object[][] {{map}, {map1}};  //two demensional data
+
+        //TestNG DataProvider
+        //object below accepts all types of data type int, double, string etc
+//        return new Object[][]{{"izaecabs@gmail.com", "Summer01", "ZARA COAT 3"}, {"iza.ecabs@gmail.com", "Summer01", "ADIDAS ORIGINAL"}};  //two demensional data
     }
 }
