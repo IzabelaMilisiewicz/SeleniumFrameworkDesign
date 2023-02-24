@@ -47,7 +47,7 @@ public class BaseTest {
         return driver;
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public LandingPage launchApplication() throws IOException {
         driver = initializeDriver();
         landingPage = new LandingPage(driver); //sending argument to class - all argument you can catch in constructor in the destination class

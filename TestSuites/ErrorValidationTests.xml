@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-        <suite name="Suite">
-<test thread-count="5" name="Submit Order Test">
-<classes>
-<class name="Tests.SubmitOrderTest"/>
-        </classes>
-        </test>
+        <suite parallel="tests"  name="Suite">  <!--parallel means tahta all tests will be run together-->
+
+        <groups>
+                <run>
+                        <include name="ErrorHandling"/>
+                </run>
+        </groups>
+
+        <test thread-count="5" name="Submit Order Test">
+        <classes>
+        <class name="Tests.SubmitOrderTest"/>
+                </classes>
+                </test>
 
         <test thread-count="5" name="Standalone Test">
         <classes>
@@ -18,4 +25,5 @@
         <class name="Tests.ErrorValidationsTest"/>
         </classes>
         </test>
+
         </suite>

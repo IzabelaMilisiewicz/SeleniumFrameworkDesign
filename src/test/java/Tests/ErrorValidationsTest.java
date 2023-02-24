@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ErrorValidationsTest extends BaseTest {
 
-    @Test
+    @Test(groups={"ErrorHandling"})
     public void LoginErrorValidation() throws IOException {
 
         String productName = "ZARA COAT 3";
