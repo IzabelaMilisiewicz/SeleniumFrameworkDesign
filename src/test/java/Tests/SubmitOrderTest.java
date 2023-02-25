@@ -49,18 +49,25 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
         Assert.assertTrue(ordersPage.IsMyProductInOrders(productName));
     }
 
-    @DataProvider
-    public Object[][] getData(){
+        @DataProvider //runing test with data directly from Hash Maps
+    public Object[][] getData() throws IOException {
         HashMap <String, String> map = new HashMap<String,String>();
-        map.put("email", "izaecabs@gmail.com");
-        map.put("password", "Summer01");
-        map.put("product", "ZARA COAT 3");
 
-        HashMap <String, String> map1 = new HashMap<String,String>();
-        map1.put("email", "iza.ecabs@gmail.com");
-        map1.put("password", "Summer01");
-        map1.put("product", "ADIDAS ORIGINAL");
-        return new Object[][] {{map}, {map1}};  //two demensional data
+        List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//Data//PurchaseOrder.json");
+        return new Object[][] {{data.get(0)}, {data.get(1)}}; //one hashMap object is one set of data, in our json we have two hashmaps
+
+//    @DataProvider //runing test with data directly from Hash Maps
+//    public Object[][] getData(){
+//        HashMap <String, String> map = new HashMap<String,String>();
+//        map.put("email", "izaecabs@gmail.com");
+//        map.put("password", "Summer01");
+//        map.put("product", "ZARA COAT 3");
+//
+//        HashMap <String, String> map1 = new HashMap<String,String>();
+//        map1.put("email", "iza.ecabs@gmail.com");
+//        map1.put("password", "Summer01");
+//        map1.put("product", "ADIDAS ORIGINAL");
+//        return new Object[][] {{map}, {map1}};  //two demensional data
 
         //TestNG DataProvider
         //object below accepts all types of data type int, double, string etc

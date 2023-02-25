@@ -1,7 +1,10 @@
 package TestComponents;
 
 import PageObjectPattern.LandingPage;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,9 +12,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 public class BaseTest {
@@ -47,6 +54,19 @@ public class BaseTest {
         return driver;
     }
 
+    public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
+
+        //read json to string
+        String jsonContent = FileUtils.readFileToString(new File(filePath),
+                StandardCharsets.UTF_8);
+        //String to hashmap - Jacson Databind is a dependency which helps to convert string content into Hash Map
+        ObjectMapper mapper = new ObjectMapper();
+        //we created an object of class ObjectMapper because we wanted to usee method .readValue()
+        List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>(){});
+        return data; //we have list if hashmaps
+
+    }
+
     @BeforeMethod(alwaysRun = true)
     public LandingPage launchApplication() throws IOException {
         driver = initializeDriver();
@@ -55,7 +75,7 @@ public class BaseTest {
         return landingPage;
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void TearDown(){
         driver.close();
     }
