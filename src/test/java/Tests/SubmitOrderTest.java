@@ -3,6 +3,9 @@ package Tests;
 import PageObjectPattern.*;
 import TestComponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
@@ -47,6 +51,14 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
         OrdersPage ordersPage = productCataloguePage.goToOrdersPage();
         Assert.assertTrue(ordersPage.IsMyProductInOrders(productName));
+    }
+
+    public String getScreenshot(String testCaseName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
+        FileUtils.copyFile(source, file);
+        return System.getProperty("user.dir")+"//reports//"+testCaseName+".png"; //here we will get path where our screenshot is stored
     }
 
         @DataProvider //runing test with data directly from Hash Maps
