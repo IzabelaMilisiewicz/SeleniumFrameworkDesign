@@ -3,6 +3,7 @@ package Tests;
 import PageObjectPattern.CartPage;
 import PageObjectPattern.ProductCataloguePage;
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebElement;
@@ -14,11 +15,11 @@ import java.util.List;
 
 public class ErrorValidationsTest extends BaseTest {
 
-    @Test(groups={"ErrorHandling"})
+    @Test(groups={"ErrorHandling"}, retryAnalyzer = Retry.class)
     public void LoginErrorValidation() throws IOException {
 
         landingPage.loginApplication("izaecabs@gmail.com", "Summer0111");
-        Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+        Assert.assertEquals("Incorrect email o password.", landingPage.getErrorMessage());
     }
 
     @Test

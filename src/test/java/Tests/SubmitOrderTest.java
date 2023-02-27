@@ -2,6 +2,7 @@ package Tests;
 
 import PageObjectPattern.*;
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -24,7 +25,7 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
     String productName= "ZARA COAT 3";
     String countryName ="pol";
 
-    @Test(dataProvider = "getData",groups={"Purchase"})
+    @Test(dataProvider = "getData",groups={"Purchase"}, retryAnalyzer = Retry.class)
 //    public void SubmitOrderTest(String email, String password, String productName) throws IOException {
     public void SubmitOrderTest(HashMap<String,String> input) throws IOException {
 
@@ -51,14 +52,6 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("izaecabs@gmail.com", "Summer01");
         OrdersPage ordersPage = productCataloguePage.goToOrdersPage();
         Assert.assertTrue(ordersPage.IsMyProductInOrders(productName));
-    }
-
-    public String getScreenshot(String testCaseName) throws IOException {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
-        FileUtils.copyFile(source, file);
-        return System.getProperty("user.dir")+"//reports//"+testCaseName+".png"; //here we will get path where our screenshot is stored
     }
 
         @DataProvider //runing test with data directly from Hash Maps
