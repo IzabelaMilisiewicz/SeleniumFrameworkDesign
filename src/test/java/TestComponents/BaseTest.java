@@ -36,14 +36,16 @@ public class BaseTest {
         //System.getProperty("ser.dir")we can use instead of path on our local device
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//Recources//GlobalData.properities");
         prop.load(fis); //we needed to use fileInputStream because this method load expects that
-        String browserName = prop.getProperty("browser");
+
+        //below information for our code that information from maven should be taken as rowser which should be used
+        String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
 
         if(browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else if(browserName.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
+            System.setProperty("webdriver.gecko.driver", "C:\\Users\\IzabelaMilisiewicz\\Downloads");
             driver = new FirefoxDriver();
         }
         else if(browserName.equalsIgnoreCase("edge")) {
