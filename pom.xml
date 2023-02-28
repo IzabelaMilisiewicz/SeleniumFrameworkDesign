@@ -52,4 +52,82 @@
 
    </dependencies>
 
+    <profiles> <!-- its easier when we have here all testng xml files here -->
+        <profile>
+            <id>Regression</id>
+            <build>
+            <pluginManagement>
+            <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M9</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            </plugins>
+            </pluginManagement>
+            </build>
+        </profile>
+
+        <profile>
+            <id>PurchaseTest</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.0.0-M9</version>
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>TestSuites/Purchase.xml</suiteXmlFile>
+                                </suiteXmlFiles>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <profile>
+            <id>ErrorValidationTest</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.0.0-M9</version>
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>TestSuites/ErrorValidationTests.xml</suiteXmlFile>
+                                </suiteXmlFiles>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+    </profiles>
+    <build>
+        <pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M9</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+        </pluginManagement>
+    </build>
 </project>

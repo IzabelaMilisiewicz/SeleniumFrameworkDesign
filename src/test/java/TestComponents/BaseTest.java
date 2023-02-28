@@ -74,6 +74,7 @@ public class BaseTest {
         File file = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
         FileUtils.copyFile(source, file);
         return System.getProperty("user.dir")+"//reports//"+testCaseName+".png"; //here we will get path where our screenshot is stored
+//        return "C:\\AutomationProjects\\SeleniumFrameworkDesign\\reports\\"+testCaseName+".png"; //here we will get path where our screenshot is stored
     }
 
     @BeforeMethod(alwaysRun = true)
