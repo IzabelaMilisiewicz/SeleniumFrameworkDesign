@@ -23,7 +23,7 @@ public class ErrorValidationsTest extends BaseTest {
     }
 
     @Test
-    public void ProductErrorValidation() throws IOException {
+    public void ProductErrorValidation() throws IOException, InterruptedException {
 
         String productName= "ZARA COAT 3";
         ProductCataloguePage productCataloguePage = landingPage.loginApplication("iza.ecabs@gmail.com", "Summer01");

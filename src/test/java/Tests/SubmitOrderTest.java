@@ -27,7 +27,7 @@ public class SubmitOrderTest extends BaseTest { //all tests class should be exte
 
     @Test(dataProvider = "getData",groups={"Purchase"}, retryAnalyzer = Retry.class)
 //    public void SubmitOrderTest(String email, String password, String productName) throws IOException {
-    public void SubmitOrderTest(HashMap<String,String> input) throws IOException {
+    public void SubmitOrderTest(HashMap<String,String> input) throws IOException, InterruptedException {
 
         ProductCataloguePage productCataloguePage = landingPage.loginApplication(input.get("email"), input.get("password"));
 

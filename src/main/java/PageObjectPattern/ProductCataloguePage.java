@@ -39,13 +39,13 @@ public class ProductCataloguePage extends AbstractComponent {
         return products;
     }
 
-    public WebElement getProductByName(String productName){
+    public WebElement getProductByName(String productName) {
         WebElement prod1 = getProductList().stream().filter(product->product.findElement(By.cssSelector("b"))
                 .getText().equals(productName)).findFirst().orElse(null);
         return prod1;
     }
 
-    public void addProductToCart(String productName){
+    public void addProductToCart(String productName) throws InterruptedException {
         WebElement prod1 = getProductByName(productName);
         prod1.findElement(addToCart).click();
         waitForElementToAppear(toastMessage);
