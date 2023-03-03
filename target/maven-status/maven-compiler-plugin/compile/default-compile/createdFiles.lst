@@ -1,0 +1,8 @@
+PageObjectPattern\CartPage.class
+PageObjectPattern\CheckoutPage.class
+PageObjectPattern\OrdersPage.class
+PageObjectPattern\LandingPage.class
+AbstractComponents\AbstractComponent.class
+PageObjectPattern\ConfirmationPage.class
+Recources\ExtentReporterNg.class
+PageObjectPattern\ProductCataloguePage.class
