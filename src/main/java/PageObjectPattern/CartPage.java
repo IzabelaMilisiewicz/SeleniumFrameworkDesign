@@ -23,7 +23,7 @@ public class CartPage extends AbstractComponent {
     List<WebElement> cartProducts;
 
     @FindBy(css=".totalRow button")
-    WebElement checkoutBtn;
+    private WebElement checkoutBtn;
 
 
     public List<WebElement> getProductsFromCart(){

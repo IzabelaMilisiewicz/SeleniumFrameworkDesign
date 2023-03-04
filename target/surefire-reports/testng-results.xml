@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results retried="1" ignored="0" total="6" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-03T21:57:16 CET" name="Suite" finished-at="2023-03-03T21:57:57 CET" duration-ms="41069">
+  <suite started-at="2023-03-04T09:40:32 CET" name="Suite" finished-at="2023-03-04T09:41:25 CET" duration-ms="52275">
     <groups>
       <group name="ErrorHandling">
         <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" name="LoginErrorValidation" class="Tests.ErrorValidationsTest"/>
@@ -11,43 +11,15 @@
         <method signature="SubmitOrderTest.SubmitOrderTest(java.util.HashMap)[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" name="SubmitOrderTest" class="Tests.SubmitOrderTest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2023-03-03T21:57:16 CET" name="Standalone Test" finished-at="2023-03-03T21:57:16 CET" duration-ms="18">
+    <test started-at="2023-03-04T09:40:32 CET" name="Standalone Test" finished-at="2023-03-04T09:40:32 CET" duration-ms="13">
     </test> <!-- Standalone Test -->
-    <test started-at="2023-03-03T21:57:16 CET" name="Error Validations Test" finished-at="2023-03-03T21:57:41 CET" duration-ms="24559">
-      <class name="Tests.ErrorValidationsTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:16 CET" name="launchApplication" finished-at="2023-03-03T21:57:24 CET" duration-ms="7943" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:24 CET" name="LoginErrorValidation" finished-at="2023-03-03T21:57:25 CET" duration-ms="1116" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:25 CET" name="TearDown" finished-at="2023-03-03T21:57:25 CET" duration-ms="26" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:25 CET" name="launchApplication" finished-at="2023-03-03T21:57:29 CET" duration-ms="3911" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:29 CET" name="ProductErrorValidation" finished-at="2023-03-03T21:57:41 CET" duration-ms="11464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductErrorValidation -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-03T21:57:41 CET" name="TearDown" finished-at="2023-03-03T21:57:41 CET" duration-ms="20" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-      </class> <!-- Tests.ErrorValidationsTest -->
-    </test> <!-- Error Validations Test -->
-    <test started-at="2023-03-03T21:57:16 CET" name="Submit Order Test" finished-at="2023-03-03T21:57:57 CET" duration-ms="41069">
+    <test started-at="2023-03-04T09:40:32 CET" name="Submit Order Test" finished-at="2023-03-04T09:41:18 CET" duration-ms="45119">
       <class name="Tests.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:17 CET" name="launchApplication" finished-at="2023-03-03T21:57:24 CET" duration-ms="7392" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:40:33 CET" name="launchApplication" finished-at="2023-03-04T09:40:41 CET" duration-ms="7961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="SubmitOrderTest(java.util.HashMap)[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:24 CET" name="SubmitOrderTest" data-provider="getData" finished-at="2023-03-03T21:57:37 CET" duration-ms="12588" status="PASS">
+        <test-method signature="SubmitOrderTest(java.util.HashMap)[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:40:41 CET" name="SubmitOrderTest" data-provider="getData" finished-at="2023-03-04T09:40:54 CET" duration-ms="13180" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -58,15 +30,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrderTest -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:37 CET" name="TearDown" finished-at="2023-03-03T21:57:37 CET" duration-ms="21" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:40:54 CET" name="TearDown" finished-at="2023-03-04T09:40:54 CET" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:37 CET" name="launchApplication" finished-at="2023-03-03T21:57:40 CET" duration-ms="3507" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:40:54 CET" name="launchApplication" finished-at="2023-03-04T09:40:59 CET" duration-ms="4590" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="SubmitOrderTest(java.util.HashMap)[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:40 CET" name="SubmitOrderTest" data-provider="getData" finished-at="2023-03-03T21:57:53 CET" duration-ms="12647" status="PASS">
+        <test-method signature="SubmitOrderTest(java.util.HashMap)[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:40:59 CET" name="SubmitOrderTest" data-provider="getData" finished-at="2023-03-04T09:41:12 CET" duration-ms="12751" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,23 +49,133 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrderTest -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:53 CET" name="TearDown" finished-at="2023-03-03T21:57:53 CET" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:41:12 CET" name="TearDown" finished-at="2023-03-04T09:41:12 CET" duration-ms="78" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:53 CET" name="launchApplication" finished-at="2023-03-03T21:57:56 CET" duration-ms="3492" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:41:12 CET" name="launchApplication" finished-at="2023-03-04T09:41:16 CET" duration-ms="4569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="OrderHistoryTest()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:56 CET" name="OrderHistoryTest" finished-at="2023-03-03T21:57:57 CET" depends-on-methods="Tests.SubmitOrderTest.SubmitOrderTest" duration-ms="758" status="PASS">
+        <test-method signature="OrderHistoryTest()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:41:16 CET" name="OrderHistoryTest" finished-at="2023-03-04T09:41:17 CET" depends-on-methods="Tests.SubmitOrderTest.SubmitOrderTest" duration-ms="963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-03T21:57:57 CET" name="TearDown" finished-at="2023-03-03T21:57:57 CET" duration-ms="21" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.SubmitOrderTest@6c4906d3]" started-at="2023-03-04T09:41:17 CET" name="TearDown" finished-at="2023-03-04T09:41:18 CET" duration-ms="94" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
       </class> <!-- Tests.SubmitOrderTest -->
     </test> <!-- Submit Order Test -->
+    <test started-at="2023-03-04T09:40:32 CET" name="Error Validations Test" finished-at="2023-03-04T09:41:25 CET" duration-ms="52275">
+      <class name="Tests.ErrorValidationsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:40:32 CET" name="launchApplication" finished-at="2023-03-04T09:40:41 CET" duration-ms="8614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method retried="true" signature="LoginErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:40:41 CET" name="LoginErrorValidation" finished-at="2023-03-04T09:41:04 CET" duration-ms="22510" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.cssSelector: [class*='flyInOut']' (tried for 5 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.cssSelector: [class*='flyInOut']' (tried for 5 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at AbstractComponents.AbstractComponent.waitForWebelementToAppear(AbstractComponent.java:39)
+at PageObjectPattern.LandingPage.getErrorMessage(LandingPage.java:46)
+at Tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:22)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[class*='flyInOut']"}
+  (Session info: chrome=110.0.5481.178)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fdce2d926df421c5e5f539c5ab420b41, findElement {using=css selector, value=[class*='flyInOut']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.178, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\IZABEL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60475}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60475/devtoo..., se:cdpVersion: 110.0.5481.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fdce2d926df421c5e5f539c5ab420b41
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:04 CET" name="TearDown" finished-at="2023-03-04T09:41:04 CET" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:04 CET" name="launchApplication" finished-at="2023-03-04T09:41:08 CET" duration-ms="4071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:08 CET" name="LoginErrorValidation" finished-at="2023-03-04T09:41:09 CET" duration-ms="1037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:09 CET" name="TearDown" finished-at="2023-03-04T09:41:09 CET" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:09 CET" name="launchApplication" finished-at="2023-03-04T09:41:13 CET" duration-ms="4133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:13 CET" name="ProductErrorValidation" finished-at="2023-03-04T09:41:25 CET" duration-ms="11616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:Tests.ErrorValidationsTest@7d3e8655]" started-at="2023-03-04T09:41:25 CET" name="TearDown" finished-at="2023-03-04T09:41:25 CET" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- Tests.ErrorValidationsTest -->
+    </test> <!-- Error Validations Test -->
   </suite> <!-- Suite -->
 </testng-results>

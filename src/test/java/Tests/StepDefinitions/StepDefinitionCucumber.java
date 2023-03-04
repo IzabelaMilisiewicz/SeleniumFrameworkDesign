@@ -5,6 +5,7 @@ import TestComponents.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
